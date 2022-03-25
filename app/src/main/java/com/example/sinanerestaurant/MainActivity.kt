@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
+import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
 
@@ -28,11 +29,12 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
         R.id.bluetooth1 -> {
-            true
+           Toast.makeText(this@MainActivity, "bluetooth", Toast.LENGTH_SHORT).show()
+           true
         }
 
         R.id.shopbag -> {
-
+            Toast.makeText(this@MainActivity, "Panier", Toast.LENGTH_SHORT).show()
             true
         }
 
@@ -40,5 +42,4 @@ class MainActivity : AppCompatActivity() {
             super.onOptionsItemSelected(item)
         }
     }
-
 }
