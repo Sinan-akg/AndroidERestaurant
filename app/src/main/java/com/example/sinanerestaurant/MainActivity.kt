@@ -3,6 +3,8 @@ package com.example.sinanerestaurant
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
 
 class MainActivity : AppCompatActivity() {
@@ -20,5 +22,23 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, MenuActivity::class.java)
             startActivity(intent)
         }
+
+
     }
+
+    override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
+        R.id.bluetooth1 -> {
+            true
+        }
+
+        R.id.shopbag -> {
+
+            true
+        }
+
+        else -> {
+            super.onOptionsItemSelected(item)
+        }
+    }
+
 }
