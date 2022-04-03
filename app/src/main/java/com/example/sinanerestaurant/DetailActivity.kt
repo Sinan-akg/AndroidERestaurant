@@ -5,18 +5,15 @@ import android.content.Intent
 import android.graphics.Color.RED
 import android.os.Bundle
 import android.view.*
-import android.widget.Button
-import android.widget.FrameLayout
-import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.sinanerestaurant.Model.Item
-import com.example.sinanerestaurant.databinding.ActivityDetailBinding
 import com.google.android.material.snackbar.Snackbar
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
+import android.widget.*
 import com.example.sinanerestaurant.ble.BLEActivity
+import com.example.sinanerestaurant.databinding.ActivityDetailBinding
 import java.lang.Integer.parseInt
 
 
@@ -24,8 +21,8 @@ class DetailActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDetailBinding
     lateinit var button: Button
     lateinit var resetbutton: Button
-    lateinit var imageplus: Button
-    lateinit var imagemoins: Button
+    lateinit var imageplus: ImageView
+    lateinit var imagemoins: ImageView
     lateinit var textnombre: TextView
     var num: Float = 0F
 
@@ -42,7 +39,7 @@ class DetailActivity : AppCompatActivity() {
         val carouselAdapter = CarouselAdapter(this, item.images)
         binding.detailSlider.adapter = carouselAdapter
 
-        binding.buttontotal.text = item.prices.joinToString { "Total : " + it.price.toString() + "€" }
+        //binding.buttontotal.text = item.prices.joinToString { "Total : " + it.price.toString() + "€" }
 
         button = findViewById(R.id.buttontotal)
         button.setOnClickListener {
@@ -78,7 +75,7 @@ class DetailActivity : AppCompatActivity() {
 
         imageplus = findViewById(R.id.imageplus)
         imageplus.setOnClickListener {
-            Toast.makeText(this@DetailActivity, "Ajout d'un élément", Toast.LENGTH_SHORT).show()
+
             num++
             tv.setText("$num")
             textnombre.text = num.toString()
@@ -90,11 +87,18 @@ class DetailActivity : AppCompatActivity() {
 
         imagemoins = findViewById(R.id.imagemoins)
         imagemoins.setOnClickListener {
-            Toast.makeText(this@DetailActivity, "Retrait d'un élément", Toast.LENGTH_SHORT).show()
+
+            if(num<1F)
+            {
+                num = 0F
+            }
+
+
             num--
             tv.setText("$num")
             textnombre.text = num.toString()
             totalComplete(item, num)
+
           //  binding.buttontotal.text = (item.prices[0].price.toFloat()*num).toString() + "€"
         }
 
@@ -149,7 +153,7 @@ class DetailActivity : AppCompatActivity() {
     private fun totalComplete(item: Item, selected: Float) {
         val totalPrice: String = item.prices[0].price
         val total1: Float = totalPrice.toFloat() * selected
-        val totalString: String = "Total :" + total1.toString() + "€"
+        val totalString: String = "Total : " + total1.toString() + "€"
        binding.buttontotal.text = totalString
 
     }
