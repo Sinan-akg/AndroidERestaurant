@@ -11,75 +11,93 @@
         android:id="@+id/detailSlider"
         android:layout_width="427dp"
         android:layout_height="298dp"
+        android:layout_marginTop="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/logo_chef"
-        tools:layout_editor_absoluteY="-9dp" />
-
-    <TextView
-        android:id="@+id/description"
-        android:layout_width="358dp"
-        android:layout_height="69dp"
-        android:layout_marginTop="40dp"
-        android:text="Description"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textedutitre" />
-
-    <TextView
-        android:id="@+id/textedutitre"
-        android:layout_width="219dp"
-        android:layout_height="62dp"
-        android:layout_marginTop="40dp"
-        android:text="Titre"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/detailSlider" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo_chef" />
 
     <Button
         android:id="@+id/buttontotal"
         android:layout_width="225dp"
         android:layout_height="67dp"
-        android:layout_marginTop="28dp"
-        android:text="Total :"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textquantite" />
-
-    <ImageView
-        android:id="@+id/imageplus"
-        android:layout_width="47dp"
-        android:layout_height="50dp"
         android:layout_marginTop="36dp"
-        android:layout_marginEnd="100dp"
+        android:text="Total :"
+        app:cornerRadius="90dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/description"
-        app:srcCompat="@drawable/ic_plus" />
-
-    <TextView
-        android:id="@+id/textquantite"
-        android:layout_width="81dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="44dp"
-
-        android:text="Quantité"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/imageplus"
-        app:layout_constraintStart_toEndOf="@+id/imagemoins"
-        app:layout_constraintTop_toBottomOf="@+id/description" />
+        app:layout_constraintHorizontal_bias="0.537"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/resetbutton" />
 
     <ImageView
         android:id="@+id/imagemoins"
         android:layout_width="49dp"
         android:layout_height="48dp"
         android:layout_marginStart="100dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/description"
         app:srcCompat="@drawable/ic_moins" />
+
+    <ImageView
+        android:id="@+id/imageplus"
+        android:layout_width="47dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/description"
+        app:srcCompat="@drawable/ic_plus" />
+
+    <TextView
+        android:id="@+id/textnombre"
+        android:layout_width="81dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="24dp"
+        android:text="0"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/imageplus"
+        app:layout_constraintHorizontal_bias="0.529"
+        app:layout_constraintStart_toEndOf="@+id/imagemoins"
+        app:layout_constraintTop_toBottomOf="@+id/description" />
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="358dp"
+        android:layout_height="69dp"
+        android:layout_marginTop="24dp"
+        android:text="Ingredients"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.867"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textedutitre" />
+
+    <TextView
+        android:id="@+id/textedutitre"
+        android:layout_width="289dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:text="Titre"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.18"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detailSlider" />
+
+    <Button
+        android:id="@+id/resetbutton"
+        android:layout_width="84dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="12dp"
+        android:text="Clear"
+        app:cornerRadius="90dp"
+        app:iconTint="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textnombre" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

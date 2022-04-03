@@ -3,15 +3,13 @@ package com.example.sinanerestaurant
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.method.LinkMovementMethod
 import android.util.Log
-import android.widget.TextView
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.widget.Toast
+import com.example.sinanerestaurant.ble.BLEActivity
 import com.example.sinanerestaurant.databinding.ActivityMenuBinding
-import java.util.*
-
-// val actionBar = supportActionBar
-//actionBar!!.title="Entrées"
 
 class MenuActivity : AppCompatActivity() {
 
@@ -20,6 +18,8 @@ class MenuActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         Log.i("MenuActivity", "Création d'une nouvelle page")
 
+        val actionBar = supportActionBar
+        actionBar!!.title = "Menus" // titre accueil
 
         binding = ActivityMenuBinding.inflate(layoutInflater)
         val view = binding.root
@@ -68,59 +68,45 @@ class MenuActivity : AppCompatActivity() {
 
     }
 
+    fun goToBluetooth() {
+        val myIntent2 = Intent(this, BLEActivity::class.java)
+        startActivity(myIntent2)
+    }
+    fun goToShopping() {
+        val myIntent3 = Intent(this, ShopActivity::class.java)
+        startActivity(myIntent3)
+    }
     override fun onDestroy() {
         super.onDestroy()
         Log.d("home", "Mon activité est détruite")
     }
+
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        val inflater: MenuInflater = menuInflater
+        inflater.inflate(R.menu.topicon, menu)
+        return true
+    }
+
+
+    override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
+        R.id.bluetooth1 -> {
+            Toast.makeText(this@MenuActivity, "Bluetooth", Toast.LENGTH_SHORT).show()
+            goToBluetooth()
+            true
+        }
+
+        R.id.shopbag -> {
+            Toast.makeText(this@MenuActivity, "Panier", Toast.LENGTH_SHORT).show()
+            goToShopping()
+            true
+        }
+
+        else -> {
+            super.onOptionsItemSelected(item)
+        }
+
+    }
 }
-        /*binding.Entree.setOnClickListener {
-
-        val myIntent = Intent(this, EntreeActivity::class.java)
-
-
-
-        Toast.makeText(
-           this@MenuActivity,
-           "Redirection vers la page des entrées",
-            Toast.LENGTH_SHORT
-        ).show()
-        startActivity(myIntent)
-
-            binding.Entree.movementMethod = LinkMovementMethod.getInstance();
-        }
-
-
-
-        binding.plat.setOnClickListener {
-
-            val myIntent2 = Intent(this, EntreeActivity::class.java)
-
-
-            Toast.makeText(
-                this@MenuActivity,
-                "Redirection vers la page des plats",
-                Toast.LENGTH_SHORT
-            ).show()
-            startActivity(myIntent2)
-
-            binding.plat.movementMethod = LinkMovementMethod.getInstance();
-
-        }
-
-
-        binding.dessert.setOnClickListener {
-
-            val myIntent3 = Intent(this, EntreeActivity::class.java)
-            Toast.makeText(
-                this@MenuActivity,
-                "Redirection vers la page des desserts",
-                Toast.LENGTH_SHORT
-            ).show()
-            startActivity(myIntent3)
-
-            binding.dessert.movementMethod = LinkMovementMethod.getInstance();
-
-        }
-*/
 
 
