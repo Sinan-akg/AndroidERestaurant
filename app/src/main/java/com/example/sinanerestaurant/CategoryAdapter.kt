@@ -55,28 +55,6 @@ internal class CategoryAdapter(val data : ArrayList<Item>, val clickListener: (I
         return data.size
     }
 
-    /* override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        val inflater: MenuInflater = menuInflater
-        inflater.inflate(R.menu.topicon, menu)
-        return true
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
-        R.id.bluetooth1 -> {
-            Toast.makeText(this@CategoryAdapter, "Bluetooth", Toast.LENGTH_SHORT).show()
-            true
-        }
-
-        R.id.shopbag -> {
-            Toast.makeText(this@CategoryAdapter, "Panier", Toast.LENGTH_SHORT).show()
-            true
-        }
-
-        else -> {
-            super.onOptionsItemSelected(item)
-        }
-    }*/
-
     class CategoryActivity : AppCompatActivity() {
         override fun onCreateOptionsMenu(menu: Menu): Boolean {
             val inflater: MenuInflater = menuInflater

@@ -24,7 +24,7 @@ class BLEActivity : AppCompatActivity() {
     private var isScanning = false
     private val ENABLE_BLUETOOTH_REQUEST_CODE = 1
     private val ALL_PERMISSION_REQUEST_CODE = 10
-    private lateinit var adapter : BLEAdapter
+    private lateinit var adapter: BLEAdapter
 
 
     private val bluetoothAdapter: BluetoothAdapter? by lazy {
@@ -41,8 +41,8 @@ class BLEActivity : AppCompatActivity() {
 
         when {
             bluetoothAdapter?.isEnabled == true ->
-                binding.bleScanStateImg.setOnClickListener{
-                startLeScanBLEWithPermission(!isScanning)
+                binding.bleScanStateImg.setOnClickListener {
+                    startLeScanBLEWithPermission(!isScanning)
                     // startLeScanBLEWithPermission(true)
                 }
 
@@ -54,40 +54,27 @@ class BLEActivity : AppCompatActivity() {
 
         }
 
-        adapter = BLEAdapter(arrayListOf()){
-            val intent = Intent(this, BLEActivity::class.java)
-            intent.putExtra(DEVICE_KEY, it)
-            startActivity(intent)
-        }
-
-
-
-
-/*
         binding.bleScanStateImg.setOnClickListener {
             startLeScanBLEWithPermission(!isScanning)
         }
         binding.bleScanStateTitle.setOnClickListener {
             startLeScanBLEWithPermission(!isScanning)
         }
-*/
-        binding.listeitem.layoutManager = LinearLayoutManager(applicationContext)
-        adapter = BLEAdapter(arrayListOf(), {})
-        binding.listeitem.adapter = adapter
-    }
 
-
- /*   private fun startLeScanBLEWithPermission(enable: Boolean){
-        if (checkAllPermissionGranted()) {
-            startLeScanBLE(enable)
-        }else{
-            ActivityCompat.requestPermissions(this, getAllPermissions() ,ALL_PERMISSION_REQUEST_CODE)
+        adapter = BLEAdapter(arrayListOf()) {
+            val intent = Intent(this, BleDeviceActivity::class.java)
+            intent.putExtra(DEVICE_KEY, it)
+            startActivity(intent)
         }
+        binding.listeitem.layoutManager = LinearLayoutManager(this)
+        binding.listeitem.adapter = adapter
+
     }
-*/
+
+
     private fun checkAllPermissionGranted(): Boolean {
         return getAllPermissions().all { permission ->
-           val test = ActivityCompat.checkSelfPermission(
+            val test = ActivityCompat.checkSelfPermission(
                 this,
                 permission
             ) == PackageManager.PERMISSION_GRANTED
@@ -124,7 +111,8 @@ class BLEActivity : AppCompatActivity() {
                     Manifest.permission.BLUETOOTH_CONNECT, //connexion (android 12)
                     Manifest.permission.BLUETOOTH_SCAN //scan (android 12)
 
-                ), ALL_PERMISSION_REQUEST_CODE)
+                ), ALL_PERMISSION_REQUEST_CODE
+            )
 
         }
     }
@@ -134,7 +122,7 @@ class BLEActivity : AppCompatActivity() {
     private fun startLeScanBLE(enable: Boolean) {
 
         bluetoothAdapter?.bluetoothLeScanner?.apply {
-            if(enable) {
+            if (enable) {
                 isScanning = true
                 startScan(scanCallBack)
             } else {
@@ -146,7 +134,7 @@ class BLEActivity : AppCompatActivity() {
     }
 
 
-    private val scanCallBack = object: ScanCallback() {
+    private val scanCallBack = object : ScanCallback() {
         override fun onScanResult(callbackType: Int, result: ScanResult) {
             Log.d("BLEScanActivity", "result : ${result?.device?.address}, rssi : ${result?.rssi}")
 
@@ -164,9 +152,9 @@ class BLEActivity : AppCompatActivity() {
         binding.progressBar.isIndeterminate = false
     }
 
-    private fun askBluetoohPermission(){
+    private fun askBluetoohPermission() {
         val enableBtIntent = Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE)
-        if(ActivityCompat.checkSelfPermission(
+        if (ActivityCompat.checkSelfPermission(
                 this,
                 android.Manifest.permission.BLUETOOTH_CONNECT
             ) == PackageManager.PERMISSION_GRANTED
@@ -188,11 +176,12 @@ class BLEActivity : AppCompatActivity() {
             binding.progressBar.isVisible = false
         }
     }
-        companion object {
+
+    companion object {
         private const val ENABLE_BLUETOOTH_REQUEST_CODE = 1
         private const val ALL_PEMISSION_REQUEST_CODE = 100
-            const val DEVICE_KEY = "Device"
-        }
-
+        const val DEVICE_KEY = "Device"
     }
+
+}
 

@@ -10,8 +10,8 @@
         android:id="@+id/characteristicsName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
         android:text="Name Characteristics"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/characteristicsUUID" />
@@ -20,7 +20,7 @@
         android:id="@+id/characteristicsUUID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
         android:text="UUID characteristics"
         app:layout_constraintStart_toStartOf="parent"
@@ -30,9 +30,10 @@
         android:id="@+id/readAction"
         android:layout_width="100dp"
         android:layout_height="40dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="176dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="160dp"
         android:text="Write"
+        app:cornerRadius="90dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -40,9 +41,12 @@
         android:id="@+id/writeAction"
         android:layout_width="100dp"
         android:layout_height="40dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="176dp"
-        android:text="Lecture"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="160dp"
+        android:text="Read"
+        app:cornerRadius="90dp"
+        app:layout_constraintEnd_toStartOf="@+id/notif"
+        app:layout_constraintHorizontal_bias="0.09"
         app:layout_constraintStart_toEndOf="@+id/readAction"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -50,30 +54,29 @@
         android:id="@+id/notif"
         android:layout_width="140dp"
         android:layout_height="40dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="176dp"
+        android:layout_marginTop="160dp"
+        android:layout_marginEnd="28dp"
         android:text="notification"
+        app:cornerRadius="90dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.272"
-        app:layout_constraintStart_toEndOf="@+id/writeAction"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/propriete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="56dp"
-        android:text="proptiete"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        android:text="Propriete"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/characteristicsUUID" />
+        app:layout_constraintTop_toBottomOf="@+id/characteristicsName" />
 
     <TextView
         android:id="@+id/valeur"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
         android:text="valeur"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/propriete" />

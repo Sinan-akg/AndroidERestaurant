@@ -52,7 +52,6 @@ class BLEAdapter(val data: ArrayList<ScanResult>, val result: (BluetoothDevice) 
         }
         else{
             data.add(scanResult)
-         //   notifyItemInserted()
         }
     }
 

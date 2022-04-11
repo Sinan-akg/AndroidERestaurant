@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/ImageChef"
+        android:layout_width="126dp"
+        android:layout_height="158dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo_chef" />
+
+    <TextView
+        android:id="@+id/NomPlat"
+        android:layout_width="140dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="100dp"
+        android:text="Nom Plat :"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/QuantityPlat"
+        android:layout_width="60dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="10dp"
+        android:text="Quantité"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/ButtonHigh"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/ButtonMinus"
+        app:layout_constraintTop_toBottomOf="@+id/PricePlat" />
+
+    <ImageView
+        android:id="@+id/ButtonMinus"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toEndOf="@+id/ImageChef"
+        app:layout_constraintTop_toBottomOf="@+id/PricePlat"
+        app:srcCompat="@drawable/ic_moins" />
+
+    <Button
+        android:id="@+id/ResetButton"
+        android:layout_width="79dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="132dp"
+        android:clickable="true"
+        android:contentDescription="@string/shop_delete_content_description"
+        android:focusable="true"
+        android:text="Clear"
+        android:textSize="8sp"
+        app:cornerRadius="90dp"
+        app:iconTint="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/QuantityPlat"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/ButtonHigh"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/PricePlat"
+        app:srcCompat="@drawable/ic_plus" />
+
+    <Button
+        android:id="@+id/totalButton"
+        android:layout_width="119dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="8dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="Total : "
+        android:textSize="8sp"
+        app:cornerRadius="90dp"
+        app:iconTint="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.623"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ResetButton"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/PricePlat"
+        android:layout_width="99dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="120dp"
+        android:fontFamily="sans-serif"
+        android:text="Prix total"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/NomPlat" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

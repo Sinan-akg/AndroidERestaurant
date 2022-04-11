@@ -8,30 +8,29 @@
 
     <TextView
         android:id="@+id/deviceName"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_width="377dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="16dp"
         android:text="Nom du device"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/deviceStatus"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="44dp"
+        android:layout_width="376dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="4dp"
         android:text="Status : deconnecté"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/deviceName" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/serviceList"
-        android:layout_width="405dp"
-        android:layout_height="617dp"
-        android:layout_marginTop="24dp"
+        android:layout_width="403dp"
+        android:layout_height="599dp"
+        android:layout_marginTop="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/deviceStatus" />

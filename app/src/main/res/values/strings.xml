@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Restaurant Sinan</string>
+    <string name="app_name">SinanAndroidERestaurant</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="section_Entrees">Entrées</string>
     <string name="section_Plats">Plats</string>
@@ -9,7 +9,28 @@
         <item> Pate carbo </item>
         <item> Pate bolo </item>
     </string-array>
-    <!-- TODO: Remove or change this placeholder text -->
+
+    <!-- Shared Preferences -->
+
+    <string name="shop_delete_content_description">shop_delete_content_description</string>
+    <string name="shop_delete_all_content">shop_delete_all_content</string>
+    <string name="buttonCommand">Passer commande</string>
+    <string name="ShopTitle">Commande : </string>
+    <string name="ShopTotalQuantity">Quantité totale :  </string>
+    <string name="ShopTotalPrice">Total :   </string>
+    <string name="add_to_shop">Ajout au panier : </string>
+    <string name="ButtonHigh">button hight</string>
+    <string name="ButtonMinus">button minus</string>
+    <string name="quantity_text">1</string>
+    <string name="ShopDelete">Shop deleted</string>
+
+    <!-- Shared Preferences -->
+
+    <string name="file_name">SharedPreferences</string>
+    <string name="total_quantity">totalShopQuantity</string>
+    <string name="total_price">totalShopPrice</string>
+    <string name="Shop_delete_all_txt">Panier supprimé !</string>
+
     <string name="ble_scan_play">Lancer le scan BLE</string>
     <string name="ble_scan_pause">Pause du scan BLE</string>
     <string name="ble_scan_attente">Scan en attente</string>

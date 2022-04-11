@@ -6,4 +6,91 @@
     android:layout_height="match_parent"
     tools:context=".ShopActivity">
 
+    <TextView
+        android:id="@+id/ShopTitle"
+        android:layout_width="201dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="36dp"
+        android:text="Panier"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/ShopList"
+        android:layout_width="392dp"
+        android:layout_height="447dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.473"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.345" />
+
+    <TextView
+        android:id="@+id/ShopTotalQuantity"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/ShopTotalPrice"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/ShopTotalPrice"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonCommand"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/buttonCommand"
+        android:layout_width="146dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="32dp"
+        android:text="Commander"
+        app:cornerRadius="90dp"
+        app:layout_constraintEnd_toStartOf="@+id/homeButton"
+        app:layout_constraintStart_toEndOf="@+id/ShopDelete"
+        app:layout_constraintTop_toBottomOf="@+id/ShopList" />
+
+    <ImageView
+        android:id="@+id/ShopDelete"
+        android:layout_width="49dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="20dp"
+        android:clickable="true"
+        android:contentDescription="@string/shop_delete_all_content"
+        android:focusable="true"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ShopTotalPrice"
+        app:srcCompat="@android:drawable/ic_delete"
+        tools:ignore="ImageContrastCheck,RedundantDescriptionCheck" />
+
+    <ImageView
+        android:id="@+id/homeButton"
+        android:layout_width="54dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ShopTotalPrice"
+        app:srcCompat="@drawable/ic_home" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -65,12 +65,12 @@
 
     <TextView
         android:id="@+id/description"
-        android:layout_width="358dp"
-        android:layout_height="69dp"
-        android:layout_marginTop="24dp"
+        android:layout_width="278dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="12dp"
         android:text="Ingredients"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.867"
+        app:layout_constraintHorizontal_bias="0.375"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textedutitre" />
 
@@ -82,7 +82,7 @@
         android:text="Titre"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.18"
+        app:layout_constraintHorizontal_bias="0.409"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/detailSlider" />
 
